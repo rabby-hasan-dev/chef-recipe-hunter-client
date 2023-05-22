@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <>
-      <div className="navbar bg-base-100 flex justify-between">
+      <div className="navbar bg-base-100 flex justify-between mt-4">
         <div>
           <h2 className='normal-case text-3xl'>Chef Market</h2>
         </div>
         <div className='text-xl'>
-         <Link to={'/'}>Home</Link>
-         <Link className='ms-4' to={'/blog'}>Blog</Link>
+         <Link className='link link-hover' to={'/'}>Home</Link>
+         <Link className='ms-4 link link-hover' to={'/blog'}>Blog</Link>
         </div>
 
         <div className="dropdown dropdown-end">
