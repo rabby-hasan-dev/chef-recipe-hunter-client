@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <div className="navbar bg-base-100 flex justify-between mt-">
         <div>
-          <h2 className='normal-case text-3xl'>Chef & Recipes</h2>
+          <h2 className='normal-case text-3xl'>Chef & Recipe</h2>
         </div>
         <div className='text-xl'>
          <Link className='link link-hover' to={'/'}>Home</Link>
