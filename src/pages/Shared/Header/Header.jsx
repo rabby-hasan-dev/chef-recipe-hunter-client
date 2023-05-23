@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
+  const { logOut, user } = useContext(AuthContext);
+  console.log(user)
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch(error =>
+        console.log(error))
+  }
   return (
     <>
       <div className="navbar bg-base-100 flex justify-between mt-">
@@ -9,8 +18,8 @@ const Header = () => {
           <h2 className='normal-case text-3xl'>Chef & Recipe</h2>
         </div>
         <div className='text-xl'>
-         <Link className='link link-hover' to={'/'}>Home</Link>
-         <Link className='ms-4 link link-hover' to={'/blog'}>Blog</Link>
+          <Link className='link link-hover' to={'/'}>Home</Link>
+          <Link className='ms-4 link link-hover' to={'/blog'}>Blog</Link>
         </div>
 
         <div className="dropdown dropdown-end">
@@ -26,7 +35,11 @@ const Header = () => {
               </a>
             </li>
 
-            <li> <Link to='/login'> Login</Link> </li>
+            <li>
+              {
+                user  ? <button onClick={handleLogOut} >logout</button> : <Link to='/login'> Login</Link>
+              }
+            </li>
           </ul>
         </div>
       </div>
