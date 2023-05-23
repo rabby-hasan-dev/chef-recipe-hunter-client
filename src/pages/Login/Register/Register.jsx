@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, json } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
     const { createUser, profilesUpdate } = useContext(AuthContext);
+    const [error, setError]=useState(null);
+    const [success,setSuccess]=useState(null);
 
     const handleRegister = (event) => {
 
@@ -13,7 +15,7 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password);
+        
         createUser(email, password)
             .then(result => {
                 profilesUpdate(name)
@@ -25,11 +27,12 @@ const Register = () => {
                 })
                 
                 const createUsers = result.user;
+                setSuccess('User Successfully Registration');
                 form.reset();
-                console.log(createUsers)
+               
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
 
 
@@ -76,10 +79,10 @@ const Register = () => {
                         </p>
 
                         <p className=" text-red-600 text-sm italic">
-
+                            {error}
                         </p>
-                        <p className=" text-sm italic">
-
+                        <p className=" text-sky-500 text-sm italic">
+                            {success}
                         </p>
 
                     </div>

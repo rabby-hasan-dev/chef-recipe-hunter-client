@@ -1,9 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
     const { sigInUser } = useContext(AuthContext)
+
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
 
     const handleLogin = (event) => {
 
@@ -15,10 +18,14 @@ const Login = () => {
         sigInUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                setSuccess("Successfully User Login")
+                form.reset();
+
             })
             .catch(error => {
-                console.log(error);
+
+                setError(error.message)
+
             })
 
     }
@@ -50,10 +57,10 @@ const Login = () => {
                         </p>
 
                         <p className=" text-red-600 text-sm italic">
-
+                            {error}
                         </p>
-                        <p className=" text-sm italic">
-
+                        <p className=" text-sky-500 text-sm italic">
+                            {success}
                         </p>
 
                     </div>

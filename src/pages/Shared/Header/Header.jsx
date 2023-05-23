@@ -37,7 +37,7 @@ const Header = () => {
 
             <li>
               {
-                user  ? <button onClick={handleLogOut} >logout</button> : <Link to='/login'> Login</Link>
+                user  ? <button onClick={handleLogOut} >logout</button> : <Link to='/logCategory'> Login</Link>
               }
             </li>
           </ul>

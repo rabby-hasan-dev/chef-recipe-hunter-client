@@ -7,6 +7,7 @@ import ChefLayout from "../Layout/ChefLayout";
 import LoginLayout from "../Layout/LoginLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import LogCategory from "../pages/Login/LogCategory";
 
 const router = createBrowserRouter([
 
@@ -43,6 +44,12 @@ const router = createBrowserRouter([
     element:<LoginLayout></LoginLayout>,
     children:[
       {
+        path:'logCategory',
+        element:<LogCategory></LogCategory>,
+
+       
+      },
+      {
         path:'login',
         element:<Login></Login>
       },
@@ -50,6 +57,7 @@ const router = createBrowserRouter([
         path:'register',
         element:<Register></Register>
       }
+      
     ]
   },
 ]);
