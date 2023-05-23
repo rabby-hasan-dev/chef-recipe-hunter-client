@@ -4,8 +4,13 @@ import Home from "../pages/Home/Home/Home";
 import Blog from "../pages/Blog/Blog";
 import ChefPage from "../pages/ChefPage/ChefPage";
 import ChefLayout from "../Layout/ChefLayout";
+import LoginLayout from "../Layout/LoginLayout";
+import Login from "../pages/Login/Login/Login";
+import Register from "../pages/Login/Register/Register";
 
 const router = createBrowserRouter([
+
+  
   {
     path: "/",
     element: <Main></Main>,
@@ -32,7 +37,21 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
       }
     ]
-  }
+  },
+  {
+    path:'/',
+    element:<LoginLayout></LoginLayout>,
+    children:[
+      {
+        path:'login',
+        element:<Login></Login>
+      },
+      {
+        path:'register',
+        element:<Register></Register>
+      }
+    ]
+  },
 ]);
 
 export default router;
