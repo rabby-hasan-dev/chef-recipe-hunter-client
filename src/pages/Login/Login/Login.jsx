@@ -1,12 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { sigInUser } = useContext(AuthContext)
+    
 
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+    const navigate=useNavigate();
+    const location=useLocation();
+    const from=location.state?.from?.pathname||'/chefPage'
+    console.log(location)
+    
 
     const handleLogin = (event) => {
 
@@ -15,10 +21,16 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        if (password.length < 6) {
+            setError('password must be 6 character or no longer');
+            return
+        }
+
         sigInUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
                 setSuccess("Successfully User Login")
+                navigate(from, { replace:true });
                 form.reset();
 
             })

@@ -1,18 +1,28 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle, FaInbox } from "react-icons/fa";
 import { AuthContext } from '../providers/AuthProvider';
 
 const LogCategory = () => {
+
+    
     const { gitPopup, googlePopup } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+    const navigate=useNavigate();
+    const location=useLocation();
+    console.log(location)
+    const from=location.state?.from?.pathname||'/chefPage'
+
+
+
 
     const handleGooglePopup = () => {
         googlePopup()
             .then(result => {
                 const loogedUser = result.user;
                 setSuccess('Successfully User Login')
+                navigate(from, { replace:true });
                 console.log(loogedUser);
 
             })
@@ -27,6 +37,7 @@ const LogCategory = () => {
             .then(result => {
                 const loogedUser = result.user;
                 setSuccess('Successfully User Login')
+                navigate(from, { replace:true });
                 console.log(loogedUser);
             })
             .catch(error => {

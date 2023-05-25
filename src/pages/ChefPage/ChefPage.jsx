@@ -7,9 +7,10 @@ import Chef from './Chef/Chef';
 const ChefPage = () => {
     const loader = useLoaderData();
     const [recipe, setRecipe] = useState([]);
+    console.log(loader);
 
     useEffect(() => {
-        fetch('http://localhost:5000/recipe')
+        fetch('https://chef-recipe-hunter-server-side-brown.vercel.app/recipe')
             .then(res => res.json())
             .then(data => setRecipe(data));
 
@@ -22,7 +23,7 @@ const ChefPage = () => {
                 <Chef>{loader}</Chef>
             </div>
 
-            <div className='grid  lg:grid-cols-4 gap-4'>
+            <div className='grid  lg:grid-cols-3 gap-4'>
                 {
                     recipe.map(rp =>
                         <ChefRecipe

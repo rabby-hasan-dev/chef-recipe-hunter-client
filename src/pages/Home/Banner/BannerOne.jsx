@@ -5,14 +5,14 @@ const BannerOne = () => {
         <>
             <div className="carousel w-full">
                 <div id="item1" className="carousel-item w-full">
-                    <img src="/src/assets/Banner (1).jpg" className="w-full" />
+                    <img src="/src/assets/Banner (2).jpg" className="w-full" />
                     <div className="carousel-caption tex-black">
                         <h5 >Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
                 <div id="item2" className="carousel-item w-full">
-                    <img src="/src/assets/Banner (2).jpg" className="w-full" />
+                    <img src="/src/assets/Banner (1).jpg" className="w-full" />
                 </div>
                 <div id="item3" className="carousel-item w-full">
                     <img src="/src/assets/Banner (3).jpg" className="w-full" />

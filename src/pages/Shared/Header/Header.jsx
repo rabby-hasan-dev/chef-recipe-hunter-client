@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
+  
   console.log(user)
   const handleLogOut = () => {
     logOut()
@@ -13,7 +14,7 @@ const Header = () => {
   }
   return (
     <>
-      <div className="navbar bg-base-100 flex justify-between mt-">
+      <div className="navbar bg-base-200 flex justify-between mt-">
         <div>
           <h2 className='normal-case text-3xl'>Chef & Recipe</h2>
         </div>

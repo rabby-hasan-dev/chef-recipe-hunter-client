@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Chef = ({children}) => {
-    console.log(children);
+    // console.log(children);
     const { id, name, picture, yearsOfExperience, likes, bio } = children;
     return (
         <div>
