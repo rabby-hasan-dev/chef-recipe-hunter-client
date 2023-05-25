@@ -53,14 +53,14 @@ const LogCategory = () => {
             <div className="w-full   lg:max-w-xs">
                 <form className="bg-slate-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
-                    <div className=" mt-2 ">
+                    <div className=" mt-2  ">
                         <Link to='/login' >
                             <button className="bg-blue-500 my-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                 <span><FaInbox></FaInbox></span> SigIn With Email
-                            </button></Link>
+                            </button></Link> <br />
                         <button onClick={handleGooglePopup} className="bg-red-500 my-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                             <FaGoogle></FaGoogle> SigIn With Google
-                        </button>
+                        </button> <br />
                         <button onClick={handleGithubPopup} className="bg-sky-500 my-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                             <FaGithub></FaGithub> SigIn With Github
                         </button>
