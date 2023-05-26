@@ -19,11 +19,10 @@ const AuthProvider = ({children}) => {
 
     
 
-    const profilesUpdate=(name)=>{
+    const profilesUpdate=(name,photo)=>{
         setLoading(true);
       return  updateProfile(auth.currentUser,{
-            displayName:name, photoURL:"https://example.com/jane-q-user/profile.jpg"
-
+            displayName:name, photoURL:photo
         })
     }
 

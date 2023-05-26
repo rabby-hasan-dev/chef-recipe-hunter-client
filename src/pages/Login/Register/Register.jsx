@@ -22,7 +22,7 @@ const Register = () => {
         
         createUser(email, password)
             .then(result => {
-                profilesUpdate(name)
+                profilesUpdate(name,photo)
                 .then(result=>{
                     console.log(result)
                 })

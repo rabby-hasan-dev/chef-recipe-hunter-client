@@ -1,17 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
-  
+ 
+
   console.log(user)
   const handleLogOut = () => {
     logOut()
       .then()
       .catch(error =>
         console.log(error))
+
   }
+
   return (
     <>
       <div className="navbar bg-base-200 flex justify-between mt-">
@@ -38,7 +41,7 @@ const Header = () => {
 
             <li>
               {
-                user  ? <button onClick={handleLogOut} >logout</button> : <Link to='/logCategory'> Login</Link>
+                user ? <button onClick={handleLogOut} >logout</button> : <Link to='/logCategory'> Login</Link>
               }
             </li>
           </ul>
