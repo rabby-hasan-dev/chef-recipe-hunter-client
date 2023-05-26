@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import ChefRecipe from './ChefRecipe/ChefRecipe';
 import Chef from './Chef/Chef';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ChefPage = () => {
     const loader = useLoaderData();
@@ -32,6 +35,7 @@ const ChefPage = () => {
                         </ChefRecipe>)
                 }
             </div>
+            <ToastContainer></ToastContainer>
 
 
         </>

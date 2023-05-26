@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const ChefRecipe = ({ children }) => {
     const { _id, name, cooking_method, ingredients, picture, rating } = children;
@@ -6,6 +7,16 @@ const ChefRecipe = ({ children }) => {
 
     // {ingredients.map()}
 
+    const [disableButton, setDisable]=useState(false);
+    console.log(disableButton);
+
+    const toastHandler=()=>{
+        toast('the recipe is my favorite')
+        setDisable(true);
+        
+
+    }
+    // disabled={{disableButton}}
 
 
     return (
@@ -23,7 +34,8 @@ const ChefRecipe = ({ children }) => {
                     <p>{rating}</p>
 
                     <div className="card-actions">
-                        <button className="btn btn-primary"> Favorite</button>
+                    <button onClick={toastHandler} disabled={disableButton} className="btn btn-primary"> Favorite</button>
+                      
                     </div>
                 </div>
             </div>

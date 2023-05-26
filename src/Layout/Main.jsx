@@ -10,6 +10,7 @@ const Main = () => {
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
+           
         </div>
     );
 };
