@@ -4,6 +4,7 @@ import ChefSection from '../Banner/ChefSection/ChefSection';
 import WelcomeBanner from '../Banner/WelcomeBanner/WelcomeBanner';
 import TakeawyFood from '../TakeawyFood/TakeawyFood';
 import Lunch from '../Lunch/Lunch';
+import FollowUs from '../FollowUs/FollowUs';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <ChefSection></ChefSection>
             <TakeawyFood></TakeawyFood>
             <Lunch></Lunch>
+            <FollowUs></FollowUs>
 
         </div>
     );
