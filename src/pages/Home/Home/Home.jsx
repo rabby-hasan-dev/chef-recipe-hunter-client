@@ -5,6 +5,7 @@ import WelcomeBanner from '../Banner/WelcomeBanner/WelcomeBanner';
 import TakeawyFood from '../TakeawyFood/TakeawyFood';
 import Lunch from '../Lunch/Lunch';
 import FollowUs from '../FollowUs/FollowUs';
+import RecipeCategory from '../RecipeCategory/RecipeCategory';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <ChefSection></ChefSection>
             <TakeawyFood></TakeawyFood>
             <Lunch></Lunch>
+            <RecipeCategory></RecipeCategory>
             <FollowUs></FollowUs>
 
         </div>

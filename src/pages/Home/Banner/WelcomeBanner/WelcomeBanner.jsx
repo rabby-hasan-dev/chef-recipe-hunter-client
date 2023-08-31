@@ -15,7 +15,7 @@ const WelcomeBanner = () => {
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
                     </p>
                     <div className="card-actions justify-end">
-                        <a href="#about">About Us Chef specialist</a>
+                        <a href="#about" className='btn btn-primary'>About Us Chef specialist</a>
                     </div>
                 </div>
             </div>
